@@ -1,4 +1,3 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
@@ -7,14 +6,13 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import styles from "./tailwind.css?url";
 
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: styles },
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
-];
+export const links: LinksFunction = () => {
+  return [
+    { rel: "stylesheet", href: styles }
+  ];
+}
 
 export default function App() {
   return (

@@ -9,7 +9,7 @@ export default function UserAccount() {
       </div>
       <div>
         <p>
-          <Link className="bg-sky-500 rounded p-2" to="..">
+          <Link className="bg-sky-500 rounded p-2" to="/user">
             User Account
           </Link>{" "}
           to go back to user index

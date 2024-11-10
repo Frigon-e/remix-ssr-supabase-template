@@ -3,10 +3,14 @@
 import { defineConfig } from 'vite'
 import { vitePlugin as remix } from "@remix-run/dev";
 import path from 'path';
+import { installGlobals } from "@remix-run/node";
+import tsconfigPaths from "vite-tsconfig-paths";
+
+installGlobals();
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [remix()],
+  plugins: [remix(), tsconfigPaths()],
   // per https://github.com/aws-amplify/amplify-js/issues/9639#issuecomment-1081781840
   resolve: {
     alias: {
